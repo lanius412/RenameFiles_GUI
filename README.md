@@ -1,7 +1,7 @@
 # RenameFiles
 
 ### Description
-Rename all selected files from "01" regardless of extension
+Rename all selected files from "001" regardless of extension
 
 ### Support : MacOS
 
