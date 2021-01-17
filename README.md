@@ -1,23 +1,15 @@
 # RenameFiles
 
 ### Description
-Rename all selected files from "001" regardless of extension
+* Rename all files in Selected Directory
+* Support Up To 3Digits
+* Rename Regardless of Extension
 
-### Support : MacOS
-
-### Running the examples
-  ```zsh
-    git clone github.com/ry0-suke/RenameFiles.git
-    cd RenameFiles
-    unzip rename.zip
-    ./rename
-  ```
-  
-  Browse... Click
-  
-  Select Files(Command + => multiple select)
-  
-  Rename Click
-  
-  Complete!!
-  
+<dl>
+  <dt>[Hundreds of Files]</dt>
+  <dd>ex) 001.go 002.go ... 010.go ... 999.go</dd>
+  <dt>[Dozens of Files]</dt>
+  <dd> ex) 001.go 002.go ... 099.go</dd>
+  <dt>[Several Files]</dt>
+  <dd>ex) 01.go 02.go ... 09.go</dd>
+</dl>
