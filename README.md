@@ -1,4 +1,4 @@
-# RenameFiles
+# RenameFiles -GUI-
 
 ### Description
 * Rename all files in Selected Directory
