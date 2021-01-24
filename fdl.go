@@ -11,7 +11,8 @@ import (
 	"log"
 
 
-	"Rename/rename"
+	//"Rename/rename"
+	"github.com/ry0-suke/RenameFiles/rename"
 )
 
 func main() {
