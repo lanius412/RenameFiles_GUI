@@ -1,11 +1,21 @@
 # RenameFiles -GUI-
-
 ![Rename](https://user-images.githubusercontent.com/39426713/104848525-b084f700-5928-11eb-99b7-c97c085217ea.gif)
 
-### Description
+#### CLI Ver (https://github.com/ry0-suke/RenameFiles_CLI)
+
+## Description
 * Rename all files in Selected Directory
 * Support Up To 3Digits
 * Rename Regardless of Extension
+
+## Usage
+```
+  $ git clone https://github.com/ry0-suke/RenameFiles_GUI/
+  $ cd RenameFiles_GUI
+  $ unzip rename.app.zip
+  $ open rename.app
+```
+
 
 <dl>
   <dt>[Hundreds of Files]</dt>
