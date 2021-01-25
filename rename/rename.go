@@ -16,47 +16,51 @@ func Rename(dir string) {
 
 	basePath := filepath.Dir(dir) + "/" + filepath.Base(dir) + "/"
 
-	files, err := ioutil.ReadDir(dir)
+	fileInfos, err := ioutil.ReadDir(dir)
 	if err != nil {
 		panic(err)
 	}
 
-	fileNum := len(files)
+	fileNum := len(fileInfos)
 
-	log.Println(strconv.Itoa(fileNum-1) + "Files")
-
+	files := make([]string, 0, 1000)
+	for _, fileInfo := range fileInfos {
+		if strings.HasPrefix(fileInfo.Name(), "."){
+			fileNum--
+			continue
+		} else {
+			files = append(files, basePath+fileInfo.Name())
+		}
+	}
+	
 	if fileNum >= 1000 {
 		log.Println("Sry, Support up to 3digits")
 		os.Exit(0)
 	}
 
-	var fileCount int
-	for _, file := range files {
-		if file.Name()[:1] == "." { //Remove Hidden File
-			continue
-		} else {
-			filePath := basePath + file.Name()
-			renamedPath := basePath
+	for num, file := range files {
+		fileName := strings.Replace(file, basePath, "", -1)
+		
+		extPos := strings.LastIndex(fileName, ".")
+		ext := fileName[extPos:] //ex).txt
+		
+		renamedPath := basePath
+		num++
+		if fileNum >= 100 && fileNum < 1000{ //Hundreds of Files
+			renamedPath = ChangeNameandPath(num, renamedPath, ext)
+		} else if fileNum >= 10 { //Dozens of Files
+			renamedPath = ChangeNameandPath(num, renamedPath, ext)
+		} else if fileNum < 10 { //Several Files
+			renamedPath += "0" + strconv.Itoa(num) + ext
+		}
 
-			extPos := strings.LastIndex(file.Name(), ".")
-			ext := file.Name()[extPos:] //ex).txt
+		log.Println(fileName + " -> " + strings.Replace(renamedPath, basePath, "", -1))
 
-			fileCount++
-			if fileNum >= 100 && fileNum < 1000{ //Hundreds of Files
-				renamedPath = ChangeNameandPath(fileCount, renamedPath, ext)
-			} else if fileNum >= 10 { //Dozens of Files
-				renamedPath = ChangeNameandPath(fileCount, renamedPath, ext)
-			} else if fileNum < 10 { //Several Files
-				renamedPath += "0" + strconv.Itoa(fileCount) + ext
-			}
-
-			log.Println(file.Name() + " -> " + strconv.Itoa(fileCount) + ext)
-
-			os.Rename(filePath, renamedPath)
+		os.Rename(file, renamedPath)
 		}
 	}
 
-	log.Println(strconv.Itoa(fileNum-1) + " Files Rename Completed")
+	log.Println(strconv.Itoa(fileNum) + " Files Rename Completed")
 
 }
 
