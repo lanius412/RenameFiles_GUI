@@ -12,7 +12,7 @@ import (
 
 
 	//"Rename/rename"
-	"github.com/ry0-suke/RenameFiles/rename"
+	"./rename"
 )
 
 func main() {
