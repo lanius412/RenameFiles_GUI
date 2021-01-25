@@ -57,7 +57,6 @@ func Rename(dir string) {
 		log.Println(fileName + " -> " + strings.Replace(renamedPath, basePath, "", -1))
 
 		os.Rename(file, renamedPath)
-		}
 	}
 
 	log.Println(strconv.Itoa(fileNum) + " Files Rename Completed")
