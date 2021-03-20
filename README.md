@@ -1,7 +1,7 @@
 # RenameFiles -GUI-
 ![Rename](https://user-images.githubusercontent.com/39426713/104848525-b084f700-5928-11eb-99b7-c97c085217ea.gif)
 
-#### CLI Ver (https://github.com/ry0-suke/RenameFiles_CLI)
+#### CLI Ver (https://github.com/lanius412/RenameFiles_CLI)
 
 ## Description
 * Rename all files in Selected Directory
@@ -10,7 +10,7 @@
 
 ## Usage
 ```
-  $ git clone https://github.com/ry0-suke/RenameFiles_GUI/
+  $ git clone https://github.com/lanius412/RenameFiles_GUI/
   $ cd RenameFiles_GUI
   $ unzip rename.app.zip
   $ open rename.app
